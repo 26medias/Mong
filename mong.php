@@ -162,4 +162,17 @@
 			);
 		}
 	}
+	
+	// required
+	function extend($params, $default) {
+		if (!is_array($params)) {
+			$params = json_decode(stripslashes($params), true);
+		}
+		foreach ($default as $paramName => $paramValue) {
+			if (!array_key_exists($paramName, $params)) {
+				$params[$paramName] = $paramValue;
+			}
+		}
+		return $params;
+	}
 ?>
