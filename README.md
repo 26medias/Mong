@@ -12,11 +12,15 @@ If you know how to query Mongo on a console, then you know how to query Mongo us
 
 First, include the lib:
 
-```require_once('mong.php');```
+```
+require_once('mong.php');
+```
 
 Then, connect to your database:
 
-``` $mongo = new mong('your_database_name'); ```
+```
+$mongo = new mong('your_database_name');
+```
 
 ## Queries ##
 
@@ -25,6 +29,7 @@ Returns a PHP array of documents.
 
 
 #### Basic ####
+
 ```
 $response = $mongo->find(array(
     "collection"    => "my_collection",
@@ -35,6 +40,7 @@ $response = $mongo->find(array(
 ```
 
 #### Sort, skip and limit ####
+
 ```
 $response = $mongo->find(array(
     "collection"    => "my_collection",
@@ -51,6 +57,7 @@ $response = $mongo->find(array(
 
 
 #### Only return part of the documents ####
+
 ```
 $response = $mongo->find(array(
     "collection"    => "my_collection",
@@ -63,6 +70,7 @@ $response = $mongo->find(array(
     )
 ));
 ```
+
 ```
 $response = $mongo->find(array(
     "collection"    => "my_collection",
@@ -76,6 +84,7 @@ $response = $mongo->find(array(
 ```
 
 #### Paginate the response ####
+
 ```
 $response = $mongo->find(array(
     "collection"    => "my_collection",
@@ -111,6 +120,7 @@ $response = $mongo->remove("my_collection",array(
 Update documents.
 
 #### Simple ####
+
 ```
 $response = $mongo->update(array(
     "collection"    => "my_collection",
@@ -122,7 +132,9 @@ $response = $mongo->update(array(
     )
 ));
 ```
+
 #### Options ####
+
 ```
 $response = $mongo->update(array(
     "collection"    => "my_collection",
